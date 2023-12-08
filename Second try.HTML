@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Page</title>
+  <style>
+    body {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .heart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .heart {
+      font-size: 50px;
+      cursor: pointer;
+      margin: 10px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .heart-message {
+      display: none;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .show-message {
+      display: block;
+    }
+
+    .pink { color: pink; }
+    .purple { color: purple; }
+    .black { color: black; }
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+    <div class="heart pink" onclick="toggleMessage('pink')">❤️</div>
+    <p class="heart-message pink-message">Je t'aime Namouuugh</p>
+  </div>
+
+  <div class="heart-container">
+    <div class="heart purple" onclick="toggleMessage('purple')">❤️</div>
+    <p class="heart-message purple-message">Je te fais un grooos ptn de câlin habboubii</p>
+  </div>
+
+  <div class="heart-container">
+    <div class="heart black" onclick="toggleMessage('black')">❤️</div>
+    <p class="heart-message black-message">Le papa le plus sexy de touuuut l'univers hihihihihii</p>
+  </div>
+
+  <script>
+    function toggleMessage(color) {
+      const messages = document.querySelectorAll('.heart-message');
+      messages.forEach(msg => msg.classList.remove('show-message'));
+      
+      const selectedMessage = document.querySelector(`.${color}-message`);
+      selectedMessage.classList.add('show-message');
+    }
+  </script>
+</body>
+</html>
